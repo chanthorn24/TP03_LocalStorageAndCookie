@@ -220,8 +220,10 @@
             function insertNewRecord(data) {
                 const getdata = localStorage.getItem('books');
                 let databookss = JSON.parse(getdata);
+
                 books = Object.assign([{}], databookss);
                 let x;
+                alert(databookss)
                 if (databookss == null) {
                     x = 0
                 } else {
