@@ -189,7 +189,16 @@
             const dataB = JSON.parse(getB);
             for (databook in dataB) {
                 document.getElementById("add_items").innerHTML +=
-                    `<div class="items"><img src="pic\.png" alt="#"><div class="name">Name : ${dataB[databook].name}</div><div class="price">Price : ${dataB[databook].price} riels</div><div class="category">Category : ${dataB[databook].category}</div><div class="button"><button id="${parseInt(databook)}" class="editBtn" onclick="editBook(this.id)">Edit</button><button id="${parseInt(databook)}" class="deletBtn" onclick="deleteBook(this.id)">Delete</button></div></div>`;
+                    `<div class="items">` +
+                    `<img src="pic\.png" alt="#">` +
+                    `<div class="name">Name : ${dataB[databook].name}</div>` +
+                    `<div class="price">Price : ${dataB[databook].price} riels</div>` +
+                    `<div class="category">Category : ${dataB[databook].category}</div>` +
+                    `<div class="button">` +
+                    `<button id="${parseInt(databook)}" class="editBtn" onclick="editBook(this.id)">Edit</button>` +
+                    `<button id="${parseInt(databook)}" class="deletBtn" onclick="deleteBook(this.id)">Delete</button>` +
+                    `</div>` +
+                    `</div>`;
             }
 
             function onFormSubmit(e) {
@@ -238,7 +247,16 @@
                 let databooks = getbooks();
 
                 document.getElementById("add_items").innerHTML +=
-                    `<div class="items"><img src="pic\.png" alt="#"><div class="name" data="${x}">Name : ${databooks[x].name}</div><div class="price">Price : ${databooks[x].price} riels</div><div class="category">Category : ${databooks[x].category}</div><div class="button"><button id="${parseInt(x)}" class="editBtn" onclick="editBook(this.id)">Edit</button><button id="${parseInt(x)}" class="deletBtn" onclick="deleteBook(this.id)">Delete</button></div></div>`;
+                    `<div class="items">` +
+                    `<img src="pic\.png" alt="#">` +
+                    `<div class="name">Name : ${databooks[x].name}</div>` +
+                    `<div class="price">Price : ${databooks[x].price} riels</div>` +
+                    `<div class="category">Category : ${databooks[x].category}</div>` +
+                    `<div class="button">` +
+                    `<button id="${parseInt(x)}" class="editBtn" onclick="editBook(this.id)">Edit</button>` +
+                    `<button id="${parseInt(x)}" class="deletBtn" onclick="deleteBook(this.id)">Delete</button>` +
+                    `</div>` +
+                    `</div>`;
             }
 
             //Edit the data
@@ -293,9 +311,19 @@
 
                     //reset home to update id element
                     document.getElementById("add_items").innerHTML = '';
+                    document.getElementById("add_items").innerHTML = `<div class="book-info">Book</div>`;
                     for (databook in databooks) {
                         document.getElementById("add_items").innerHTML +=
-                            `<div class="items"><img src="pic\.png" alt="#"><div class="name">Name : ${databooks[databook].name}</div><div class="price">Price : ${databooks[databook].price} riels</div><div class="category">Category : ${databooks[databook].category}</div><div class="button"><button id="${parseInt(databook)}" class="editBtn" onclick="editBook(this.id)">Edit</button><button id="${parseInt(databook)}" class="deletBtn" onclick="deleteBook(this.id)">Delete</button></div></div>`;
+                            `<div class="items">` +
+                            `<img src="pic\.png" alt="#">` +
+                            `<div class="name">Name : ${databooks[databook].name}</div>` +
+                            `<div class="price">Price : ${databooks[databook].price} riels</div>` +
+                            `<div class="category">Category : ${databooks[databook].category}</div>` +
+                            `<div class="button">` +
+                            `<button id="${parseInt(databook)}" class="editBtn" onclick="editBook(this.id)">Edit</button>` +
+                            `<button id="${parseInt(databook)}" class="deletBtn" onclick="deleteBook(this.id)">Delete</button>` +
+                            `</div>` +
+                            `</div>`;
                     }
                 }
                 resetForm();
