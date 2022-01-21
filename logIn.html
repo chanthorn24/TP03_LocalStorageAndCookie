@@ -153,7 +153,7 @@
         function setCookie(cname) {
             var now = new Date();
             var time = now.getTime();
-            var expireTime = time + 1000 * 30;
+            var expireTime = time + 1000 * 30; //expire 30sec
             now.setTime(expireTime);
             document.cookie = 'email=' + cname + ';expires=' + now.toUTCString() + ';path=/';
         }
